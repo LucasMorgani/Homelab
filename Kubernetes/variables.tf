@@ -15,7 +15,7 @@ variable "proxmox_image_datastore" {
 variable "proxmox_control_vm_cores" {
     description = "Number of CPU cores for the control VMs"
     type        = number
-    default     = 4
+    default     = 2
 }
 
 variable "proxmox_worker_vm_cores" {
@@ -33,7 +33,7 @@ variable "proxmox_control_vm_memory" {
 variable "proxmox_worker_vm_memory" {
     description = "Memory in MB for the worker VMs"
     type        = number
-    default     = 4096
+    default     = 8192
 }
 
 variable "proxmox_vm_type" {
