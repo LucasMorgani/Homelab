@@ -1,0 +1,20 @@
+services:
+  chromium:
+    image: lscr.io/linuxserver/chromium:latest
+    container_name: chromium
+    security_opt:
+      - seccomp:unconfined
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Sao_Paulo
+      - PIXELFLUX_WAYLAND=false
+      - CHROME_CLI=--app=https://chat.google.com
+      - DISPLAY_WIDTH=400
+      - DISPLAY_HEIGHT=110
+    volumes:
+      - ./chromium-config:/config
+    ports:
+      - "3001:3001"
+    shm_size: "1gb"
+    restart: unless-stopped
