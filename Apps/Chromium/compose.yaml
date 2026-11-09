@@ -4,6 +4,7 @@ services:
     container_name: chromium
     security_opt:
       - seccomp:unconfined
+      - apparmor:unconfined
     environment:
       - PUID=1000
       - PGID=1000
